@@ -1,0 +1,131 @@
+@use '../modules/_setting' as *;
+
+/**********************
+    common
+***********************/
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: $main-color;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+
+    @include sp {
+        font-size: 14px;
+    }
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: $sab-color;
+    cursor: pointer;
+}
+
+.flex-box {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.flex-box-center {
+    display: flex;
+    justify-content: center;
+}
+
+.section__wrap {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    @include sp {
+        padding: 0 17px;
+    }
+}
+
+.title {
+    font-size: 32px;
+    text-align: center;
+    line-height: 1.5;
+
+    @include pc {
+        font-size: 28px;
+    }
+
+    @include sp {
+        font-size: 24px;
+    }
+}
+
+.title-one {
+    margin-top: 80px;
+    line-height: 1.0;
+
+    @include sp {
+        margin-top: 40px;
+        font-size: 20px;
+    }
+}
+
+.title-others {
+    margin-top: 96px;
+
+    @include sp {
+        margin-top: 72px;
+    }
+}
+
+.wrap-gray {
+    background-color: rgba(249, 249, 249, 1);
+}
+
+.sp-break {
+    display: none;
+
+    @include sp {
+        display: block;
+    }
+}
+
+.tab-break{
+    display: none;
+
+    @include tab {
+        display: block;
+    }
+
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1.2s ease-out;
+
+    &.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .text-delay {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 2.0s ease-out;
+    }
+    
+    .delay-1 { transition-delay: 0.2s; }
+    .delay-2 { transition-delay: 0.6s; }
+    .delay-3 { transition-delay: 1.0s; }
+    
+}

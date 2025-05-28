@@ -1,0 +1,288 @@
+@use '../modules/_setting' as *;
+/**********************
+    header
+***********************/
+
+.header__wrap {
+    background-color: #fff;
+    padding: 0 0 0 20px;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    
+    @include sp {
+        padding-left: 16px;
+    }
+}
+
+.header__logo h1 {
+    padding: 10px 0;
+    max-width: 227px;
+    width: 100%;
+
+    @include tab {
+        padding: 18px 0;
+        max-width: 180px;
+    }
+
+    @include sp {
+        padding: 16px 0;
+        max-width: 139px;
+    }
+
+    a {
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}
+
+.menu-trigger {
+    display: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: none;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    z-index: 998;
+    transition: all .5s;
+    background-color: $main-color;
+    padding: 0 12px;
+
+    @include sp {
+        width: 64px;
+        height: 64px;
+        padding: 0 12px;
+    }
+
+    &::after {
+        content: "メニュー";
+        font-size: 12px;
+        color: #fff;
+        width: 60px;
+        display: block;
+        margin-top: 35px;
+
+        @include sp {
+            font-size: 10px;
+            width: 40px;
+            margin-top: 27px;
+        }
+
+    }
+
+    span {
+        display: block;
+        position: absolute;
+        width: 32px;
+        height: 1px;
+        background-color: #fff;
+        transition: all .5s;
+    }
+
+    span:nth-of-type(1) {
+        top: 25px;
+        right: 24px;
+        
+        @include sp {
+            top: 14px;
+        right: 16px;
+        }
+    }
+
+    span:nth-of-type(2) {
+        top: 34px;
+        right: 24px;
+
+        @include sp {
+            top: 23px;
+        right: 16px;
+        }
+    }
+
+    span:nth-of-type(3) {
+        top: 43px;
+        right: 24px;
+
+        @include sp {
+            top: 32px;
+        right: 16px;
+        }
+    }
+
+    @include pc {
+        display: block;
+    }
+}
+
+
+.menu-trigger.active span:nth-of-type(1) {
+    -webkit-transform: translateY(10px) rotate(-315deg);
+    transform: translateY(10px) rotate(-315deg);
+}
+
+.menu-trigger.active span:nth-of-type(2) {
+    opacity: 0;
+}
+
+.menu-trigger.active span:nth-of-type(3) {
+    -webkit-transform: translateY(-9px) rotate(315deg);
+    transform: translateY(-9px) rotate(315deg);
+}
+
+
+.header__nav {
+
+    &.active {
+        display: block;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #fff;
+        z-index: 99;
+
+        @include sp {
+            top: 64px;
+        }
+    }
+
+    @include pc {
+        display: none;
+    }
+}
+
+
+
+
+.header__nav-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 28px;
+    margin-right: 60px;
+
+    &.active {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background-color: $sab-color;
+    }
+
+    li {
+        border-bottom: 1px solid #fff;
+
+    }
+
+
+    a {
+        font-weight: $bold;
+
+        &:hover {
+            opacity: 0.6;
+            transition: 0.6s;
+        }
+
+        &.active {
+            color: #fff;
+            font-size: 16px;
+            width: 100%;
+            display: inline-block;
+            padding: 24px 0 23px 16px;
+        }
+    }
+}
+
+.hamburger-only-list {
+    display: none;
+
+    img {
+        width: 24px;
+        height: 24px;
+        margin-right: 12px;
+
+    }
+
+    p {
+        color: #fff;
+    }
+
+    a {
+        color: #fff;
+        display: flex !important;
+        align-items: center;
+        padding: 20px 15px ;
+    }
+
+    &.active {
+        display: block;
+    }
+}
+
+
+
+.request-btn {
+    background-color: $sab-color;
+    padding: 32px 43px;
+    color: #fff;
+    display: flex;
+    gap: 7px;
+    align-items: center;
+
+    @include pc {
+        display: block;
+        padding: 17px 15px;
+        position: absolute;
+        right: 80px;
+    }
+
+    @include sp {
+        display: block;
+        padding: 13px 12px;
+        position: absolute;
+        right: 64px;
+    }
+
+    .mail-icon {
+        max-width: 32px;
+        width: 100%;
+
+        @include pc {
+            max-width: 28px;
+            margin: 0 auto;
+        }
+
+        @include sp {
+            max-width: 24px;
+            margin: 0 auto;
+        }
+    }
+
+    p {
+        font-size: 16px;
+
+        @include pc {
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        @include sp {
+            font-size: 10px;
+            margin-top: 4px;
+        }
+    }
+
+}
+
+body.active {
+    overflow: hidden;
+}

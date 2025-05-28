@@ -1,0 +1,38 @@
+/**********************
+    setting
+***********************/
+
+$main-color: #333333;
+$sab-color: #007FC6;
+$bold: 700;
+
+// ブレイクポイント
+$pc: 1200px;
+$pc-s: 1080px;
+$tab: 950px;
+$sp: 480px;
+
+@mixin pc {
+    @media screen and (max-width: ($pc)) {
+        @content;
+    }
+}
+
+@mixin pc-s {
+    @media screen and (max-width: ($pc-s)) {
+        @content;
+    }
+}
+
+@mixin tab {
+    @media screen and (max-width: ($tab)) {
+        @content;
+    }
+}
+
+
+@mixin sp {
+    @media screen and (max-width: ($sp)) {
+        @content;
+    }
+}

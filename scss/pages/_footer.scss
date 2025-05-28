@@ -1,0 +1,39 @@
+@use '../modules/_setting' as *;
+
+/**********************
+    footer
+***********************/
+
+.footer {
+    text-align: center;
+    padding: 26px 0 18px;
+
+    @include sp {
+        padding: 24px 0;
+    }
+}
+
+.footer__logo {
+    max-width: 227px;
+    margin: 0 auto;
+
+    a {
+        display: block;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+
+    img {
+        object-fit: cover;
+    }
+
+}
+
+.copyright {
+    font-family: "Goldman";
+    font-size: 12px;
+    margin-top: 37px;
+}
+
