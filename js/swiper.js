@@ -19,8 +19,7 @@ const autoSwiper = new Swiper(".Achievements__swiper", {
 
 // case
 const caseSwiper = new Swiper('.case__swiper', {
-    /*  wrapperClass: 'case__swiper-wrapper',
-     slideClass: 'case__slide', */
+    
     slidesPerGroup: 1,
     slidesPerView: 1,
     allowTouchMove: false,

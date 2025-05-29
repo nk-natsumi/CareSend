@@ -736,7 +736,6 @@ case
     @include sp {
         width: 20px;
         height: 20px;
-        /* margin: 0 6px; */
     }
 }
 
@@ -752,7 +751,7 @@ case
     font-size: 20px;
 }
 
-.case__swiper .swiper-button-next::after {
+.swiper-button-next::after {
     content: '\f054';
 
     @include sp {
@@ -761,7 +760,7 @@ case
 
 }
 
-.case__swiper .swiper-button-prev::after {
+.swiper-button-prev::after {
     content: '\f053';
 
     @include sp {
