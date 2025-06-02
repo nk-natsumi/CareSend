@@ -1,9 +1,25 @@
 $(document).ready(function () {
-    $(".downloadForm").on("submit", function (e) {
-        e.preventDefault(); // フォームの通常送信を止める
+    const $form = $(".downloadForm");
+    const $inputs = $form.find("input[required]");
+    const $submitBtn = $form.find(".downloadBtn");
 
-        const $form = $(this); // 今送信されたフォーム
-        $form.find(".downloadBtn").hide(); // このフォーム内のボタンだけ非表示
-        $form.find(".thankYouMessage").fadeIn(); // このフォーム内のメッセージだけ表示
+    $submitBtn.prop("disabled", true);
+
+    $inputs.on("input", function () {
+        let allFilled = true;
+
+        $inputs.each(function () {
+            if ($(this).val().trim() === "") {
+                allFilled = false;
+            }
+        });
+
+        $submitBtn.prop("disabled", !allFilled); 
+    });
+
+    $form.on("submit", function (e) {
+        e.preventDefault();
+        $submitBtn.hide();
+        $form.find(".thankYouMessage").fadeIn();
     });
 });
