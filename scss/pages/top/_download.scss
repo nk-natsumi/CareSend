@@ -1,0 +1,53 @@
+@use '../../base/setting' as *;
+
+
+/**********************
+download
+************************/
+
+.download__wrap {
+    background-image: url('../images/background-4876988_1280%201.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px 0;
+    text-align: center;
+    margin-top: 31px;
+
+    @include sp {
+        background-image: url('../images/background-sp.jpg');
+        padding: 40px 0;
+    }
+}
+
+.download__title {
+    font-size: 24px;
+    line-height: 1.8;
+    font-weight: $bold;
+    color: #fff;
+}
+
+.download__btn {
+    max-width: 320px;
+    margin: 24px auto 0;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 40px;
+
+    @include sp {
+        margin-top: 39px;
+    }
+
+
+    a {
+        display: block;
+        color: $sab-color;
+        font-size: 20px;
+        padding: 16px 50px;
+
+        &:hover {
+            color: $sab-color;
+            opacity: 0.5;
+            transition: 0.5s;
+        }
+    }
+}

@@ -1,0 +1,68 @@
+
+@use '../../base/setting' as *;
+
+/**********************
+Achievements
+************************/
+
+.Achievements {
+    .flex-box-center {
+        gap: 84px;
+        margin-top: 40px;
+        justify-content: center;
+        padding: 0 16px;
+
+        @include sp {
+            display: block;
+            margin-top: 30px;
+        }
+    }
+}
+
+.Achievements__img {
+    max-width: 428px;
+    width: 100%;
+
+    @include sp {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+}
+
+.Achievements__img:nth-child(2) {
+    @include sp {
+        margin-top: 8px;
+    }
+}
+
+.Achievements {
+    .swiper {
+        width: 100%;
+        overflow: hidden;
+
+        .swiper-wrapper {
+            transition-timing-function: linear !important;
+            margin-top: 64px;
+            margin-bottom: 96px;
+
+            @include tab {
+                margin-top: 39px;
+                margin-bottom: 72px;
+            }
+
+
+            .swiper-slide {
+                max-width: 248px;
+
+                @include sp {
+                    max-width: 160px;
+                }
+
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

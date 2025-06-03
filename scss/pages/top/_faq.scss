@@ -1,0 +1,178 @@
+@use '../../base/setting' as *;
+
+
+/**********************
+faq
+************************/
+#faq {
+    padding: 96px 0 72px;
+
+    @include tab {
+        padding: 0 0 72px;
+    }
+
+    .title {
+        line-height: 1.0;
+    }
+}
+
+.faq__wrap {
+    box-sizing: content-box;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    @include tab {
+        padding: 0 16px;
+    }
+}
+
+.faq__accordion {
+    margin-top: 70px;
+
+    @include tab {
+        margin-top: 48px;
+    }
+
+    @include sp {
+        margin-top: 48px;
+    }
+}
+
+.faq__list-item {
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.question {
+    margin-top: 24px;
+    padding: 18px 24px 18px 36px;
+    position: relative;
+    border-radius: 10px;
+    cursor: pointer;
+
+    @include tab {
+        padding: 25px 12px 25px 10px;
+    }
+
+    @include sp {
+        margin-top: 16px;
+        padding: 11px 10px;
+    }
+}
+
+
+.question h4 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.q-mark {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Goldman";
+    font-size: 32px;
+    background-color: $sab-color;
+    color: #fff;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    margin-right: 24px;
+    flex-shrink: 0;
+
+    @include tab {
+        font-size: 16px;
+        width: 32px;
+        height: 32px;
+        margin-right: 8px;
+    }
+
+    @include sp {
+        margin-right: 14px;
+    }
+}
+
+.q-text {
+    flex: 1;
+    min-width: 0;
+
+    @include tab {
+        line-height: 1.5;
+        font-size: 14px;
+    }
+}
+
+.toggle {
+    font-size: 36px;
+    font-weight: 300;
+    cursor: pointer;
+    text-align: center;
+    margin-left: 8px;
+
+    @include tab {
+        font-weight: 600;
+        font-size: 16px;
+
+    }
+}
+
+.question01 {
+    @include sp {
+        padding: 16px 10px;
+    }
+
+    .q-mark {
+        @include sp {
+            margin-right: 10px !important;
+        }
+    }
+}
+
+.question.active {
+    background-color: $sab-color;
+    color: #fff;
+    border-radius: 10px 10px 0 0;
+}
+
+.toggle-after {
+    font-size: 40px;
+    font-weight: 300;
+    display: none;
+    margin-left: 8px;
+    cursor: pointer;
+
+    @include tab {
+        font-size: 16px;
+        top: 16px;
+        right: 10px;
+    }
+}
+
+.question.active .toggle {
+    display: none;
+}
+
+.question.active .toggle-after {
+    display: block;
+}
+
+.question.active .q-mark {
+    background-color: #FFF;
+    color: $sab-color;
+}
+
+.answer {
+    line-height: 1.8;
+    background-color: #FFF;
+    padding: 24px 36px;
+    display: none;
+    border-radius: 0 0 10px 10px;
+
+
+    @include sp {
+        padding: 10px;
+    }
+}

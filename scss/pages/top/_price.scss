@@ -1,0 +1,107 @@
+@use '../../base/setting' as *;
+
+
+/**********************
+price
+************************/
+
+
+
+.price__wrap {
+    padding: 96px 56px 57px;
+
+    @include sp {
+        padding: 72px 32px 89px;
+    }
+
+    .title {
+        line-height: 1.0;
+    }
+
+}
+
+.price__content {
+    margin: 69px 0 48px;
+    gap: 12px;
+
+    @include sp {
+        margin-top: 31px;
+    }
+}
+
+.price__item {
+    box-sizing: border-box;
+    box-shadow: 0 4px 4px 0 rgba(51, 51, 51, 0.25);
+    background-color: #fff;
+    border-radius: 5px;
+    max-width: 296px;
+    width: 100%;
+    border-top: $sab-color solid 12px;
+    text-align: center;
+    padding-bottom: 90px;
+
+    @include tab {
+        padding-bottom: 50px;
+    }
+
+    @include sp {
+        padding-bottom: 17px;
+        border-top: $sab-color solid 6px;
+    }
+}
+
+.price__title {
+    font-size: 24px;
+    margin-top: 32px;
+
+    @include tab {
+        font-size: 18px;
+        margin-top: 18px;
+    }
+
+    @include sp {
+        font-size: 12px;
+        margin-top: 8px;
+    }
+}
+
+.price__item {
+    p {
+        font-weight: $bold;
+        font-size: 32px;
+        margin-top: 23px;
+
+        @include tab {
+            font-size: 20px;
+            margin-top: 16px;
+        }
+
+        @include sp {
+            font-size: 12px;
+            margin-top: 12px;
+        }
+
+        span {
+            font-size: 96px;
+            color: $sab-color;
+
+            @include tab {
+                font-size: 54px;
+            }
+
+            @include sp {
+                font-size: 36px;
+            }
+        }
+    }
+}
+
+.attention {
+    font-size: 14px;
+    line-height: 1.8;
+    max-width: 684px;
+
+    @include sp {
+        font-size: 12px;
+    }
+}

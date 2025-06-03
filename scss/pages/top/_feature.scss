@@ -1,0 +1,77 @@
+@use '../../base/setting' as *;
+
+
+/**********************
+feature
+************************/
+
+#feature {
+
+    .flex-box {
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+
+    .title {
+        margin-top: 116px;
+
+        @include sp {
+            margin-top: 72px;
+        }
+    }
+}
+
+.feature__content {
+    margin-top: 51px;
+    gap: 24px;
+}
+
+.feature__content-item {
+    flex-grow: 1;
+    width: calc((100% - (24px * 1)) / 2);
+    min-width: 416px;
+    border: solid 1px $sab-color;
+    padding: 14px 31px 23px;
+    display: block;
+    /*⚠️ heightを指定しないと全ての要素の高さが揃わない */
+    height: 325px;
+
+    @include sp {
+        min-width: 341px;
+        font-size: 16px;
+        padding: 14px 29px 23px;
+        height: auto;
+    }
+
+
+    .feature__img {
+        max-width: 116px;
+        margin: 0 auto;
+        flex-grow: 1;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    h4 {
+        font-size: 20px;
+        line-height: 1.5;
+        font-weight: $bold;
+        color: rgba(244, 117, 0, 1);
+        margin-top: 18px;
+        text-align: center;
+    }
+
+    p {
+        margin-top: 18px;
+        text-align: left;
+        line-height: 1.8;
+
+        @include sp {
+            font-size: 16px;
+        }
+    }
+}
+

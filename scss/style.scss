@@ -1,8 +1,21 @@
-@use './modules/_reset';
-@use './modules/_setting' as *;
+@use './base/_reset';
+@use './base/_setting' as *;
 @use './pages/_common';
 @use './pages/_header';
 @use './pages/_footer';
-@use './pages/_top';
+
+@use'./pages/top/fv';
+@use'./pages/top/Achievements';
+@use'./pages/top/about';
+@use'./pages/top/feature';
+@use'./pages/top/download';
+@use'./pages/top/case';
+@use'./pages/top/price';
+@use'./pages/top/faq';
+@use'./pages/top/form';
+
+
+
+/* @use './pages/_top'; */
 
 

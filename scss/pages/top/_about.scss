@@ -1,0 +1,78 @@
+@use '../../base/setting' as *;
+
+
+/**********************
+about
+************************/
+
+
+.about__text {
+    font-size: 24px;
+    line-height: 1.8;
+    font-weight: $bold;
+    margin-top: 51px;
+    text-align: center;
+
+    @include tab {
+        font-size: 20px;
+    }
+
+    @include sp {
+        margin-top: 63px;
+    }
+
+    span {
+        font-size: 32px;
+        color: $sab-color;
+        line-height: 1.8;
+
+        @include sp {
+            font-size: 24px;
+        }
+    }
+}
+
+.about__img-bg {
+    background-color: rgba(249, 249, 249, 1);
+    max-width: 808px;
+    height: 276px;
+    margin: 45px auto 0;
+    position: relative;
+
+    @include sp {
+        max-width: 341px;
+        height: 648px;
+        margin-top: 54px;
+    }
+}
+
+.about__img {
+    max-width: 562px;
+    margin: 0 auto;
+    width: 100%;
+
+    img {
+        max-width: 562px;
+        margin: 0 auto;
+        width: 100%;
+        position: absolute;
+        top: -20px;
+        object-fit: cover;
+    }
+
+    @include sp {
+        display: none;
+    }
+}
+
+.about__img-sp {
+    display: none;
+    max-width: 315px;
+    margin: 0 auto;
+
+    @include sp {
+        display: block;
+    }
+
+}
+

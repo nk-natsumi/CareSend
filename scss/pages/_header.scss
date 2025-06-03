@@ -1,4 +1,4 @@
-@use '../modules/_setting' as *;
+@use '../base/_setting' as *;
 /**********************
     header
 ***********************/
@@ -20,21 +20,29 @@
 }
 
 .header__logo h1 {
-    padding: 14px 0;
     max-width: 227px;
     width: 100%;
 
     @include tab {
-        padding: 18px 0;
         max-width: 180px;
     }
 
     @include sp {
-        padding: 16px 0;
         max-width: 139px;
     }
 
     a {
+    display: block;
+        padding: 22px 0;
+
+        @include tab {
+            padding: 18px 0;
+        }
+
+        @include sp {
+            padding: 16px 0;
+        }
+
         &:hover {
             opacity: 0.6;
             transition: 0.6s;

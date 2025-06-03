@@ -1,0 +1,411 @@
+@use '../../base/setting' as *;
+/**********************
+    fv
+***********************/
+
+
+.fv__wrap {
+    margin-top: 96px;
+    background: linear-gradient(to right, $sab-color, 50%, #02D1FF);
+    padding: 84px 16px;
+    color: #fff;
+    position: relative;
+    gap: calc((161/1536)*100%);
+    align-items: flex-start;
+
+    @include pc {
+        gap: calc((40/1536)*100%);
+        margin-top: 80px;
+    }
+
+    @include tab {
+        display: block;
+        padding: 40px 16px 26px;
+    }
+
+    @include sp {
+        margin-top: 64px;
+    }
+}
+
+.fv__text-container {
+    margin-left: 24px;
+
+    @include pc-s {
+        margin-left: 0;
+    }
+}
+
+
+.fv__main-text {
+    max-width: 615px;
+    line-height: 1.5;
+    width: 100%;
+
+    @include pc-s {
+        max-width: 500px;
+    }
+
+    @include tab {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    p {
+        font-size: 20px;
+
+        @include pc {
+            font-size: 18px;
+        }
+
+        @include pc-s {
+            font-size: 16px;
+        }
+
+        @include sp {
+            font-size: 14px;
+        }
+    }
+
+    .fv__text-lower {
+        @include pc-s {
+            line-height: 1.8;
+        }
+    }
+
+}
+
+.fv__text-center {
+    font-size: 56px;
+    margin-top: 11px;
+    margin-bottom: 15px;
+
+    @include pc {
+        font-size: 38px;
+    }
+
+    @include pc-s {
+        font-size: 32px;
+        line-height: 1.8;
+    }
+
+    @include sp {
+        font-size: 24px;
+        margin-top: 18px;
+        margin-bottom: 24px;
+        line-height: 1.8;
+    }
+}
+
+.fv__text-box {
+    margin-top: 37px;
+    color: $sab-color;
+    box-sizing: border-box;
+    line-height: 1.0;
+
+    @include sp {
+        margin-top: 16px;
+    }
+
+    .flex-box-center {
+        gap: 22px;
+        justify-content: left;
+        margin-left: 5px;
+
+        @include pc {
+            gap: 8px;
+        }
+
+        @include tab {
+            margin-left: 0;
+            gap: 4px;
+            justify-content: center;
+        }
+    }
+}
+
+.fv__text-content {
+    font-size: 24px;
+    font-weight: $bold;
+
+    @include pc {
+        font-size: 18px;
+    }
+
+    @include sp {
+        font-size: 16px;
+    }
+
+    li {
+        background-color: #fff;
+        border: $sab-color 1px solid;
+        border-radius: 50%;
+        padding: 41px 0;
+        text-align: center;
+        max-width: 164px;
+        width: 100%;
+        position: relative;
+
+        @include pc {
+            max-width: 146px;
+            padding: 35px 0;
+        }
+
+        @include pc-s {
+            max-width: 130px;
+            padding: 38px 0;
+        }
+
+        @include sp {
+            max-width: 112px;
+            padding: 28px 0 30px;
+        }
+    }
+}
+
+.fv__text-box-inner {
+    font-size: 32px;
+    margin-top: 26px;
+
+    @include pc {
+        margin-top: 15px;
+        font-size: 24px;
+    }
+
+    @include sp {
+        margin-top: 18px;
+        font-size: 18px;
+    }
+
+    span {
+        font-size: 24px;
+
+        @include tab {
+            font-size: 18px;
+        }
+    }
+}
+
+.fv__text-box-inner {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.fv__alert-namber {
+    font-size: 12px;
+    color: $main-color;
+    position: relative;
+
+    &::before {
+        content: "★";
+        font-size: 6px;
+        color: $main-color;
+        position: absolute;
+        top: 0;
+        left: -5px;
+    }
+}
+
+.fv__alert {
+    font-size: 12px;
+    color: #fff;
+    margin-top: 27px;
+
+    @include tab {
+        max-width: 400px;
+        margin: 27px auto 0;
+    }
+
+    @include sp {
+        margin-top: 24px;
+    }
+}
+
+.fv__alert-2 {
+    margin-top: 7px;
+}
+
+.fv__img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 360px;
+    width: 100%;
+
+    img {
+        object-fit: cover;
+    }
+
+    @include pc {
+        position: static;
+        transform: translateX(0%);
+        margin: -14px auto;
+    }
+
+    @include tab {
+        margin-bottom: 44px;
+        width: 110%;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+form {
+    max-width: 400px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 8px 8px 28px;
+
+    @include tab {
+        padding: 8px 8px 16px;
+        margin: 0 auto;
+    }
+
+    h3 {
+        font-size: 20px;
+        font-weight: $bold;
+        background-color: $sab-color;
+        border-radius: 5px;
+        padding: 16px 15px 16px 14px;
+        position: relative;
+        text-align: center;
+
+        @include tab {
+            padding: 18px 12px;
+        }
+
+        @include sp {
+            font-size: 16px;
+        }
+
+        &::after {
+            content: "▼";
+            position: absolute;
+            bottom: -11px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: $sab-color;
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    .form__content {
+        padding: 9px 8px 31px 8px;
+
+        @include sp {
+            padding: 0;
+        }
+
+        .name-group {
+            display: flex;
+            gap: 18px;
+
+            .name-text input {
+                max-width: 175px;
+                width: 100%;
+            }
+
+            @include tab {
+                margin-top: 10px;
+            }
+
+        }
+
+        label {
+            display: block;
+            color: $main-color;
+            font-weight: $bold;
+            font-size: 14px;
+            margin-top: 15px;
+            position: relative;
+
+
+
+            &::after {
+                content: "★";
+                color: #F90000;
+                font-size: 7px;
+                position: absolute;
+                top: 0px;
+            }
+        }
+
+        input {
+            display: block;
+            max-width: 360px;
+            width: 100%;
+            margin-top: 8px;
+            padding: 14px 0 14px 8px;
+            border: #CED4DA 1px solid;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #F5F8FA;
+            color: $main-color;
+
+            &::placeholder {
+                color: rgba(170, 170, 170, 1);
+            }
+        }
+
+        .form__privacy {
+            font-size: 14px;
+            color: $main-color;
+            margin-top: 24px;
+            line-height: 1.5;
+
+            @include tab {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+.form__btn {
+    text-align: center;
+    margin: 0 32px 0 32px;
+
+    @include sp {
+        margin: 40px 0 0;
+    }
+
+    input {
+        background-color: $sab-color;
+        padding: 16px 40px;
+        font-size: 20px;
+        color: #fff;
+        border: $sab-color;
+        border-radius: 30px;
+        cursor: pointer;
+        line-height: 1.0;
+
+        @include sp {
+            font-size: 16px;
+            padding: 13px 27px;
+        }
+
+
+        &:hover {
+            opacity: 0.8;
+            transition: 0.5s;
+        }
+
+    }
+}
+
+.thankYouMessage {
+    display: none;
+    text-align: center;
+    background-color: $sab-color;
+    padding: 16px 15px;
+    font-size: 15px;
+    color: #fff;
+    border: $sab-color;
+    border-radius: 30px;
+    line-height: 1.0;
+
+}
+

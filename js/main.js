@@ -27,7 +27,6 @@ $(document).ready(function () {
 
 
 
-
     });
 
 
@@ -61,55 +60,48 @@ $(document).ready(function () {
         }
     });
 
-    /* form *//* 
-    const $form = $(".downloadForm");
-    const $inputs = $form.find("input[required]");
-    const $submitBtn = $form.find(".downloadBtn");
 
-    $submitBtn.prop("disabled", true);
+    // form 
+    let isAlreadySubmitted = false; // ← グローバルで送信済みフラグを用意
 
-    $inputs.on("input", function () {
-        let allFilled = true;
-
-        $inputs.each(function () {
-            if ($(this).val().trim() === "") {
-                allFilled = false;
-            }
-        });
-
-        $submitBtn.prop("disabled", !allFilled);
-    });
-
-    $form.on("submit", function (e) {
-        e.preventDefault();
-        $submitBtn.hide();
-        $form.find(".thankYouMessage").fadeIn();
-    }); */
-
-   
-
-        const $form = $('.downloadForm');
+    $('.downloadForm').each(function () {
+        const $form = $(this);
         const $submitBtn = $form.find('.downloadBtn');
+        const $thankYou = $form.find('.thankYouMessage');
 
-        $form.find('input, textarea').on('input change', function () {
-            const allFilled =
-                $form.find('input[type="text"]').filter(function () {
-                    return $(this).val().trim() === '';
-                }).length === 0 &&
-                $form.find('input[type="email"]').val().trim() !== '' &&
-                $form.find('input[type="tel"]').val().trim() !== '' &&
-                $form.find('#privacyCheck').prop('checked') === true;
+        // 最初は非表示、ボタン無効化
+        $submitBtn.prop('disabled', true);
+        $thankYou.hide();
 
-            $submitBtn.prop('disabled', !allFilled);
+        // 入力チェック
+        $form.find('input').on('input', function () {
+            const isFilled =
+                $form.find('.first-name').val() !== "" &&
+                $form.find('.last-name').val() !== "" &&
+                $form.find('input[name="company-name"]').val() !== "" &&
+                $form.find('input[name="mail"]').val() !== "" &&
+                $form.find('input[name="tel"]').val() !== "";
+
+            $submitBtn.prop('disabled', !isFilled || isAlreadySubmitted); // フラグ確認も追加
         });
 
+        // 送信時
         $form.on('submit', function (e) {
             e.preventDefault();
+
+            if (isAlreadySubmitted) return; // ← ここで二回目以降を完全ブロック！
+
+            isAlreadySubmitted = true; // フラグを立てる！
+
             $submitBtn.hide();
-            $form.find('.thankYouMessage').fadeIn();
+            $thankYou.fadeIn();
+
+            $form[0].reset();
+
+            // 他のフォームの送信ボタンを無効にする
+            $('.downloadForm').not($form).find('.downloadBtn').prop('disabled', true);
         });
-
-
+    });
 
     // achievements
     const autoSwiper = new Swiper(".Achievements__swiper", {
@@ -152,6 +144,20 @@ $(document).ready(function () {
             },
         }
     });
+
+
+    const viewport = document.querySelector('meta[name="viewport"]');
+    function switchViewport() {
+        const value =
+            window.outerWidth > 375
+                ? 'width=device-width,initial-scale=1'
+                : 'width=375';
+        if (viewport.getAttribute('content') !== value) {
+            viewport.setAttribute('content', value);
+        }
+    }
+    addEventListener('resize', switchViewport, false);
+    switchViewport();
 
 
 });
