@@ -35,6 +35,10 @@
     display: block;
         padding: 22px 0;
 
+        @include pc{
+            padding: 14px 0;
+        }
+
         @include tab {
             padding: 18px 0;
         }
@@ -247,6 +251,7 @@
     display: flex;
     gap: 7px;
     align-items: center;
+    font-weight: bold;
 
     &:hover {
         opacity: 0.8;

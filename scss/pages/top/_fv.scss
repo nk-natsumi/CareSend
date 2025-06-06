@@ -381,6 +381,7 @@ form {
         border-radius: 30px;
         cursor: pointer;
         line-height: 1.0;
+        font-weight: bold;
 
         @include sp {
             font-size: 16px;
@@ -408,4 +409,3 @@ form {
     line-height: 1.0;
 
 }
-

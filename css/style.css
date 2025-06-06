@@ -286,6 +286,11 @@ a {
   display: block;
   padding: 22px 0;
 }
+@media screen and (max-width: 1200px) {
+  .header__logo h1 a {
+    padding: 14px 0;
+  }
+}
 @media screen and (max-width: 950px) {
   .header__logo h1 a {
     padding: 18px 0;
@@ -478,6 +483,7 @@ a {
   display: flex;
   gap: 7px;
   align-items: center;
+  font-weight: bold;
 }
 .request-btn:hover {
   opacity: 0.8;
@@ -960,6 +966,7 @@ form .form__content .form__privacy {
   border-radius: 30px;
   cursor: pointer;
   line-height: 1;
+  font-weight: bold;
 }
 @media screen and (max-width: 480px) {
   .form__btn input {
